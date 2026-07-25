@@ -142,25 +142,17 @@ body {
     gap: 12px;
 }
 
-.logo-box {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+.brand-logo-img {
+    height: 44px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
 }
 
-.logo-ar {
-    font-size: 2.2rem;
-    font-weight: 900;
-    color: var(--brand-navy);
-    letter-spacing: -0.5px;
-    line-height: 1;
-}
-
-.logo-en {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--brand-orange);
-    line-height: 1;
+.brand-logo-img:hover {
+    transform: scale(1.04);
 }
 
 .logo-sub {
