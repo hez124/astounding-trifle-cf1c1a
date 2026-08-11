@@ -219,6 +219,18 @@ body {
     box-shadow: 0 6px 18px rgba(255, 0, 0, 0.35);
 }
 
+.btn-pdf-header {
+    background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+}
+
+.btn-pdf-header:hover {
+    background: linear-gradient(135deg, #EF4444 0%, #B91C1C 100%);
+    box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
+}
+
+
 /* Main Layout Grid */
 .main-wrapper {
     flex: 1;
@@ -431,6 +443,21 @@ body {
     background: linear-gradient(135deg, #E60000 0%, #990000 100%);
     box-shadow: 0 10px 22px rgba(255, 0, 0, 0.4);
 }
+
+.btn-pdf-cta {
+    background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+    color: #FFFFFF !important;
+    padding: 12px 22px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    box-shadow: 0 6px 18px rgba(220, 38, 38, 0.3);
+}
+
+.btn-pdf-cta:hover {
+    background: linear-gradient(135deg, #EF4444 0%, #B91C1C 100%);
+    box-shadow: 0 10px 22px rgba(220, 38, 38, 0.4);
+}
+
 
 .btn-web-cta {
     background: #FFFFFF;
