@@ -192,6 +192,22 @@ body {
     transform: translateY(-2px);
 }
 
+.header-actions .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.btn-store-header {
+    background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25);
+}
+
+.btn-store-header:hover {
+    background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+    box-shadow: 0 6px 18px rgba(124, 58, 237, 0.35);
+}
+
 .btn-download-header {
     background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-navy-light) 100%);
     color: #FFFFFF !important;
@@ -206,6 +222,11 @@ body {
     background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     color: #FFFFFF !important;
     box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+}
+
+.btn-whatsapp-header:hover {
+    background: linear-gradient(135deg, #22BF5B 0%, #0E7569 100%);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
 }
 
 .btn-youtube-header {
@@ -405,6 +426,20 @@ body {
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
+}
+
+.btn-store-cta {
+    background: linear-gradient(135deg, #7C3AED 0%, #5B21B6 100%);
+    color: #FFFFFF !important;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 800;
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.btn-store-cta:hover {
+    background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+    box-shadow: 0 12px 25px rgba(124, 58, 237, 0.45);
 }
 
 .btn-primary-cta {
@@ -739,12 +774,24 @@ body {
     .screen-card-frame {
         max-width: 100%;
     }
+
+    .header-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 640px) {
     .header-container {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .header-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 8px;
     }
 
     .logo-sub {
