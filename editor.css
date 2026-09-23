@@ -1,0 +1,737 @@
+/* ==========================================================================
+   EXAM EDITOR (محرر الاختبارات المدرسية الذكي) - SPECIFIC STYLES
+   Extends style.css with specialized components, comparison table,
+   interactive showcase, and high-fidelity print brochure styles.
+   ========================================================================== */
+
+/* Brand Accent Overrides & Extended Variables */
+:root {
+    --editor-teal: #0D9488;
+    --editor-teal-light: #14B8A6;
+    --editor-teal-glow: rgba(13, 148, 136, 0.25);
+    
+    --editor-indigo: #4F46E5;
+    --editor-indigo-light: #6366F1;
+    --editor-indigo-glow: rgba(79, 70, 229, 0.25);
+
+    --editor-gold: #D97706;
+    --editor-card-border: rgba(226, 232, 240, 0.85);
+}
+
+/* Nav Switch Pills */
+.nav-product-switch {
+    display: flex;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.06);
+    padding: 4px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    gap: 4px;
+}
+
+.product-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+}
+
+.product-pill:hover {
+    color: var(--brand-navy);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.product-pill.active {
+    background: #FFFFFF;
+    color: var(--brand-navy);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Print Brochure Header Button */
+.btn-print-brochure {
+    background: linear-gradient(135deg, var(--editor-teal) 0%, #0F766E 100%);
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px var(--editor-teal-glow);
+}
+
+.btn-print-brochure:hover {
+    background: linear-gradient(135deg, var(--editor-teal-light) 0%, var(--editor-teal) 100%);
+    box-shadow: 0 6px 18px var(--editor-teal-glow);
+}
+
+/* Metrics Strip (شريط إحصائيات القوة والأمان) */
+.metrics-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 28px 0;
+}
+
+.metric-item {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--editor-card-border);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+    transition: var(--transition-fast);
+}
+
+.metric-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    border-color: rgba(26, 86, 219, 0.3);
+}
+
+.metric-icon-wrap {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.metric-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-title {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--brand-navy);
+}
+
+.metric-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.35;
+}
+
+/* Detailed Features Section */
+.features-section {
+    margin: 40px 0 20px;
+}
+
+.section-head {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(79, 70, 229, 0.1);
+    color: var(--editor-indigo);
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 5px 14px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--brand-navy);
+    letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 8px auto 0;
+}
+
+.features-detailed-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.feature-detailed-card {
+    background: #FFFFFF;
+    border: 1px solid var(--editor-card-border);
+    border-radius: var(--radius-md);
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
+}
+
+.feature-detailed-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-blue), var(--editor-teal));
+    opacity: 0;
+    transition: var(--transition-fast);
+}
+
+.feature-detailed-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    border-color: rgba(26, 86, 219, 0.35);
+}
+
+.feature-detailed-card:hover::before {
+    opacity: 1;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+}
+
+.card-title {
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: var(--brand-navy);
+}
+
+.card-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.card-bullets {
+    list-style: none;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(226, 232, 240, 0.9);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.card-bullets li {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card-bullets li::before {
+    content: '✓';
+    color: var(--editor-teal);
+    font-weight: 900;
+    font-size: 0.85rem;
+}
+
+/* Comparison Section */
+.comparison-section {
+    margin: 45px 0 25px;
+    background: #FFFFFF;
+    border: 1px solid var(--editor-card-border);
+    border-radius: var(--radius-lg);
+    padding: 32px 30px;
+    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.04);
+}
+
+.comparison-table-wrap {
+    overflow-x: auto;
+    margin-top: 24px;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: right;
+}
+
+.comparison-table th {
+    padding: 14px 18px;
+    font-size: 0.95rem;
+    font-weight: 800;
+    background: #F8FAFC;
+    color: var(--brand-navy);
+    border-bottom: 2px solid #E2E8F0;
+}
+
+.comparison-table th:first-child {
+    border-top-right-radius: 12px;
+}
+
+.comparison-table th:last-child {
+    border-top-left-radius: 12px;
+}
+
+.comparison-table th.col-highlight {
+    background: linear-gradient(135deg, rgba(26, 86, 219, 0.08) 0%, rgba(13, 148, 136, 0.08) 100%);
+    color: var(--brand-blue);
+    border-bottom-color: var(--brand-blue);
+}
+
+.comparison-table td {
+    padding: 14px 18px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #EDF2F7;
+    vertical-align: middle;
+}
+
+.comparison-table tr:hover td {
+    background: rgba(248, 250, 252, 0.7);
+}
+
+.comparison-table td.col-highlight {
+    background: rgba(26, 86, 219, 0.02);
+    font-weight: 700;
+    color: var(--brand-navy);
+}
+
+.badge-pro {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    background: rgba(13, 148, 136, 0.12);
+    color: var(--editor-teal);
+    font-size: 0.78rem;
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+}
+
+.badge-con {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #DC2626;
+    font-size: 0.78rem;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+}
+
+/* Big Action CTA Banner */
+.cta-banner-section {
+    margin: 40px 0 20px;
+    background: linear-gradient(135deg, var(--brand-navy) 0%, #112646 100%);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    box-shadow: 0 10px 30px rgba(10, 25, 47, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-banner-section::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 107, 0, 0.25) 0%, rgba(255, 107, 0, 0) 70%);
+    pointer-events: none;
+}
+
+.cta-banner-content h2 {
+    font-size: 1.7rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.cta-banner-content p {
+    font-size: 1rem;
+    color: #CBD5E1;
+    max-width: 650px;
+    line-height: 1.5;
+}
+
+.cta-banner-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+/* Modal Caption Details */
+.modal-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: right;
+}
+
+.modal-detail-item {
+    font-size: 0.85rem;
+    color: #E2E8F0;
+}
+
+.modal-detail-item strong {
+    color: #38BDF8;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1200px) {
+    .metrics-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .features-detailed-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .metrics-strip {
+        grid-template-columns: 1fr;
+    }
+    .features-detailed-grid {
+        grid-template-columns: 1fr;
+    }
+    .cta-banner-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 20px;
+    }
+    .cta-banner-buttons {
+        justify-content: center;
+    }
+    .modal-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   PRINT BROCHURE STYLESHEET (@media print)
+   Optimizes layout for high-resolution A4 printing and clean PDF exporting
+   ========================================================================== */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 10mm 12mm;
+    }
+
+    body {
+        background: #FFFFFF !important;
+        color: #000000 !important;
+        font-size: 11pt !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Hide Web-only and interactive elements */
+    .mesh-background,
+    .header-actions,
+    .nav-product-switch,
+    .cta-actions,
+    .cta-banner-section,
+    .preview-modal,
+    .image-hover-overlay,
+    .card-header-bar,
+    .card-footer-banner,
+    .btn,
+    .hero-badge .pulse-dot {
+        display: none !important;
+    }
+
+    /* Print Header Banner */
+    .header {
+        background: none !important;
+        border-bottom: 2px solid #0A192F !important;
+        padding: 0 0 10px 0 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .main-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .content-side {
+        width: 100% !important;
+    }
+
+    .visual-side {
+        width: 100% !important;
+        margin: 15px 0 !important;
+    }
+
+    .screen-card-frame {
+        box-shadow: none !important;
+        border: 1px solid #CBD5E1 !important;
+    }
+
+    .metrics-strip {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 10px !important;
+        margin: 15px 0 !important;
+    }
+
+    .metric-item {
+        border: 1px solid #CBD5E1 !important;
+        box-shadow: none !important;
+        padding: 10px !important;
+    }
+
+    .features-detailed-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        page-break-inside: avoid;
+    }
+
+    .feature-detailed-card {
+        border: 1px solid #CBD5E1 !important;
+        box-shadow: none !important;
+        padding: 12px !important;
+        page-break-inside: avoid;
+    }
+
+    .comparison-section {
+        border: 1px solid #CBD5E1 !important;
+        box-shadow: none !important;
+        padding: 15px !important;
+        page-break-inside: avoid;
+        margin-top: 15px !important;
+    }
+
+    /* Print Contact Footer */
+    .compact-footer {
+        border-top: 2px solid #0A192F !important;
+        background: none !important;
+        margin-top: 20px !important;
+        padding: 12px 0 0 0 !important;
+    }
+
+    .footer-links a {
+        color: #000000 !important;
+        text-decoration: none !important;
+        font-weight: 700 !important;
+    }
+}
+
+/* ==========================================================================
+   HOMEPAGE SPOTLIGHT & TOP ANNOUNCEMENT BAR
+   ========================================================================== */
+
+/* Top Announcement Bar */
+.top-announcement-bar {
+    background: linear-gradient(90deg, #0A192F 0%, #0D9488 50%, #1A56DB 100%);
+    color: #FFFFFF;
+    padding: 8px 0;
+    font-size: 0.88rem;
+    position: relative;
+    z-index: 101;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.announcement-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.announcement-badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 10px;
+    border-radius: var(--radius-pill);
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.3px;
+}
+
+.announcement-text {
+    color: #F8FAFC;
+}
+
+.announcement-link {
+    color: #FCD34D !important;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.announcement-link:hover {
+    color: #FFFFFF !important;
+    transform: translateX(-3px);
+}
+
+/* Header Spotlight Button for Exam Editor */
+.btn-editor-spotlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%);
+    color: #FFFFFF !important;
+    padding: 7px 16px;
+    border-radius: var(--radius-pill);
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(13, 148, 136, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: var(--transition-fast);
+}
+
+.btn-editor-spotlight:hover {
+    background: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.5);
+    transform: translateY(-2px);
+}
+
+.spotlight-tag {
+    background: #FEF08A;
+    color: #854D0E;
+    font-size: 0.7rem;
+    font-weight: 900;
+    padding: 1px 7px;
+    border-radius: var(--radius-pill);
+}
+
+.pulse-dot-green {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #34D399;
+    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+    animation: greenPulse 1.8s infinite;
+}
+
+@keyframes greenPulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 7px rgba(52, 211, 153, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+
+/* Homepage Product Switch Banner (البطاقة الترويجية في الصفحة الرئيسية) */
+.homepage-editor-banner {
+    margin: 25px 0 10px;
+    background: linear-gradient(135deg, #0A192F 0%, #0D2847 60%, #0D9488 100%);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border: 1px solid rgba(13, 148, 136, 0.35);
+    box-shadow: 0 10px 30px rgba(10, 25, 47, 0.15);
+    color: #FFFFFF;
+}
+
+.editor-banner-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.editor-banner-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.editor-banner-text h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.editor-banner-text p {
+    font-size: 0.88rem;
+    color: #CBD5E1;
+    line-height: 1.4;
+}
+
+.editor-banner-action {
+    flex-shrink: 0;
+}
+
+.btn-open-editor {
+    background: #FFFFFF;
+    color: var(--brand-navy) !important;
+    font-weight: 800;
+    padding: 10px 22px;
+    border-radius: var(--radius-pill);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.btn-open-editor:hover {
+    background: #F8FAFC;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    color: var(--editor-teal) !important;
+}
+
+@media (max-width: 900px) {
+    .homepage-editor-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .editor-banner-info {
+        flex-direction: column;
+    }
+}

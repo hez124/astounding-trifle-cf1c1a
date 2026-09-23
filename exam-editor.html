@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محرر الاختبار | Exam Editor - نظام صياغة وتنسيق الاختبارات المدرسية الذكي 2026</title>
+    <meta name="description"
+        content="محرر الاختبار Exam Editor - الحل المبتكر والذكي للمعلمين والمدارس لإعداد وتنسيق وطباعة الاختبارات المدرسية باحترافية وسرعة فائقة. بنك أسئلة، رسم عثماني، معادلات، وترقيم تلقائي.">
+    <meta name="keywords"
+        content="محرر الاختبار, جداول مدرسية, بنك الأسئلة, اختبارات مدرسية, وورد للاختبارات, رسم المصحف, معادلات رياضية, وزارة التعليم">
+    <link rel="icon" type="image/png" href="editor-icon.png">
+
+    <!-- Google Fonts: Cairo, Readex Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Readex+Pro:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Core CSS + Editor Extended Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=4.2">
+    <link rel="stylesheet" href="editor.css?v=1.0">
+</head>
+
+<body>
+
+    <!-- Ambient Animated Mesh Background -->
+    <div class="mesh-background">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Header Navigation Bar -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <div class="logo-brand">
+                <img src="editor-icon.png" alt="شعار محرر الاختبار Exam Editor" class="brand-logo-img">
+                <div style="display: flex; flex-direction: column;">
+                    <strong style="font-size: 1.15rem; color: var(--brand-navy); line-height: 1.2;">محرر الاختبار</strong>
+                    <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">Exam Editor • 2026</span>
+                </div>
+            </div>
+
+            <!-- Product Switcher (التنقل بين منتجات تِرم) -->
+            <div class="nav-product-switch">
+                <a href="index.html" class="product-pill">
+                    <span>📅 نظام تِرم للجداول</span>
+                </a>
+                <a href="exam-editor.html" class="product-pill active">
+                    <span>📝 محرر الاختبارات الذكي</span>
+                </a>
+            </div>
+
+            <!-- Header Quick Actions -->
+            <div class="header-actions">
+                <button onclick="window.print()" class="btn btn-print-brochure" title="طباعة أو تصدير كبروشور PDF">
+                    <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                    </svg>
+                    <span>طباعة البروشور</span>
+                </button>
+
+                <a href="https://github.com/hez124/ExamEditorEXE/releases/download/1.0.0/ExamEditor_Setup_v1.0.0.exe" class="btn btn-download-header" style="background: linear-gradient(135deg, var(--editor-teal) 0%, #0F766E 100%);">
+                    <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>تحميل البرنامج</span>
+                </a>
+
+                <a href="https://term.zid.store" target="_blank" class="btn btn-store-header">
+                    <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span>متجر تِرم</span>
+                </a>
+
+                <a href="https://wa.me/966554814644" target="_blank" class="btn btn-whatsapp-header">
+                    <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.59 2.002 14.153.997 11.959.997c-5.439 0-9.864 4.378-9.868 9.808-.001 1.774.475 3.506 1.378 5.037L2.483 20.83l5.164-1.354h.001z">
+                        </path>
+                    </svg>
+                    <span>0554814644</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Landing / Brochure Body -->
+    <main class="main-wrapper">
+        <div class="container">
+
+            <!-- Hero Two-Column Grid -->
+            <div class="main-grid" style="align-items: center; margin-top: 15px;">
+
+                <!-- Right Column: Pitch & Features Box -->
+                <div class="content-side">
+                    <div class="hero-badge" style="background: rgba(13, 148, 136, 0.1); color: var(--editor-teal); border-color: rgba(13, 148, 136, 0.25);">
+                        <span class="pulse-dot" style="background: var(--editor-teal);"></span>
+                        <span>⚡ الإصدار الجديد 2026 | أحدث ابتكارات تِرم للتعليم</span>
+                    </div>
+
+                    <h1 class="main-title" style="margin-top: 10px;">
+                        <span class="brand-name" style="background: linear-gradient(135deg, #0D9488 0%, #1A56DB 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">محرر الاختبار</span>... صياغة احترافية لأسئلتك في دقائق وبأعلى المعايير.
+                    </h1>
+
+                    <p class="main-desc">
+                        وداعاً لتشتت الجداول وانهيار التنسيق في برامج الكتابة العادية. يمنحك <strong class="highlight-text" style="color: var(--editor-teal);">محرر الاختبار الذكي</strong> بيئة متكاملة مصممة خصيصاً للمعلم: بنك أسئلة متطور، إدراج الآيات القرآنية برسم المصحف العثماني، معادلات رياضية نقية، وترويسة رسمية مع ترقيم آلي فوري.
+                    </p>
+
+                    <!-- Features Mini-Grid Box -->
+                    <div class="leaders-box">
+                        <div class="leaders-header">
+                            <span class="orange-badge" style="background: linear-gradient(135deg, var(--editor-teal) 0%, #0F766E 100%);">لماذا يفضل المعلمون «محرر الاختبار»؟</span>
+                        </div>
+
+                        <div class="features-mini-grid">
+                            <div class="feat-card">
+                                <div class="feat-icon icon-blue">📚</div>
+                                <div class="feat-text">
+                                    <strong>بنك أسئلة متكامل</strong>
+                                    <span>تصفية، تصنيف، وخلط نماذج لمنع الغش.</span>
+                                </div>
+                            </div>
+
+                            <div class="feat-card">
+                                <div class="feat-icon icon-emerald">📖</div>
+                                <div class="feat-text">
+                                    <strong>القرآن الكريم العثماني</strong>
+                                    <span>رسم مصحف المدينة دون تشويه التشكيل.</span>
+                                </div>
+                            </div>
+
+                            <div class="feat-card">
+                                <div class="feat-icon icon-purple">📐</div>
+                                <div class="feat-text">
+                                    <strong>معادلات ورموز علمية</strong>
+                                    <span>كسور، جذور، ومصفوفات رياضية فائقة الدقة.</span>
+                                </div>
+                            </div>
+
+                            <div class="feat-card">
+                                <div class="feat-icon icon-orange">⚡</div>
+                                <div class="feat-text">
+                                    <strong>ترقيم تلقائي وحذف ذكي</strong>
+                                    <span>إعادة ترقيم الفقرات فورياً بضغطة زر.</span>
+                                </div>
+                            </div>
+
+                            <div class="feat-card">
+                                <div class="feat-icon icon-cyan">🏛️</div>
+                                <div class="feat-text">
+                                    <strong>ترويسة وزارية معتمدة</strong>
+                                    <span>مطابقة لنماذج وضوابط وزارة التعليم.</span>
+                                </div>
+                            </div>
+
+                            <div class="feat-card">
+                                <div class="feat-icon icon-amber">🖨️</div>
+                                <div class="feat-text">
+                                    <strong>معاينة وطباعة وتصدير PDF</strong>
+                                    <span>مخرجات ورقية طبق الأصل بدقة طباعية عالية.</span>
+                                </div>
+                            </div>
+
+                            <div class="feat-card">
+                                <div class="feat-icon icon-indigo">⌨️</div>
+                                <div class="feat-text">
+                                    <strong>تنقل سريع بمفتاح Tab</strong>
+                                    <span>كتابة سريعة وانسيابية بين الخيارات.</span>
+                                </div>
+                            </div>
+
+                            <div class="feat-card">
+                                <div class="feat-icon icon-rose">🔒</div>
+                                <div class="feat-text">
+                                    <strong>يعمل 100% بدون إنترنت</strong>
+                                    <span>سرية وأمان تام لبنوك الأسئلة والاختبارات.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action CTA Buttons Strip -->
+                    <div class="cta-actions">
+                        <a href="https://term.zid.store" target="_blank" class="btn btn-store-cta">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            <span>متجر تِرم الإلكتروني</span>
+                        </a>
+
+                        <a href="https://github.com/hez124/ExamEditorEXE/releases/download/1.0.0/ExamEditor_Setup_v1.0.0.exe" class="btn btn-primary-cta" style="background: linear-gradient(135deg, var(--editor-teal) 0%, #0F766E 100%);">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            <span>تحميل البرنامج (Setup.exe)</span>
+                        </a>
+
+                        <a href="https://github.com/hez124/ExamEditorEXE/releases/download/1.0.0/ExamEditor_Portable_v1.0.0.zip" class="btn" style="background: rgba(10, 25, 47, 0.08); color: var(--brand-navy); border: 1px solid rgba(10, 25, 47, 0.15);">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                            </svg>
+                            <span>النسخة المحمولة (Portable.zip)</span>
+                        </a>
+
+                        <a href="https://wa.me/966554814644" target="_blank" class="btn btn-whatsapp-cta">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.59 2.002 14.153.997 11.959.997c-5.439 0-9.864 4.378-9.868 9.808-.001 1.774.475 3.506 1.378 5.037L2.483 20.83l5.164-1.354h.001z">
+                                </path>
+                            </svg>
+                            <span>واتساب: 0554814644</span>
+                        </a>
+
+                        <button onclick="window.print()" class="btn btn-pdf-cta">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4H7v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                            </svg>
+                            <span>طباعة البروشور / PDF</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Left Column: Visual Showcase Frame -->
+                <div class="visual-side">
+                    <div class="screen-card-frame" onclick="openPreviewModal()">
+                        <div class="card-header-bar">
+                            <div class="dot-indicators">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="frame-title">معاينة واجهة محرر الاختبار الذكي 2026</span>
+                        </div>
+
+                        <div class="image-wrapper">
+                            <img src="editor-showcase.jpg" alt="واجهة برنامج محرر الاختبارات المدرسية الذكي" class="system-image">
+                            <div class="image-hover-overlay">
+                                <div class="zoom-pill">
+                                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                                    </svg>
+                                    <span>انقر لتكبير صورة الواجهة بدقة عالية</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer-banner">
+                            <div class="banner-calendar-icon">✨</div>
+                            <div class="banner-text">
+                                <strong>محرر الاختبار ...</strong>
+                                <span>صُمم خصيصاً ليواكب المعايير الرسمية للاختبارات بالمملكة.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Value Metric Highlights Strip (شريط إحصائيات القوة والأمان) -->
+            <div class="metrics-strip">
+                <div class="metric-item">
+                    <div class="metric-icon-wrap" style="background: rgba(13, 148, 136, 0.12); color: var(--editor-teal);">🔒</div>
+                    <div class="metric-text">
+                        <span class="metric-title">100% أمان وخصوصية</span>
+                        <span class="metric-desc">يعمل بدون إنترنت تماماً لحماية سرية الأسئلة.</span>
+                    </div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-icon-wrap" style="background: rgba(26, 86, 219, 0.12); color: var(--brand-blue);">🏛️</div>
+                    <div class="metric-text">
+                        <span class="metric-title">نماذج وزارية معتمدة</span>
+                        <span class="metric-desc">ترويسة وجداول رصد متوافقة مع ضوابط التعليم.</span>
+                    </div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-icon-wrap" style="background: rgba(245, 158, 11, 0.12); color: var(--brand-orange);">⏱️</div>
+                    <div class="metric-text">
+                        <span class="metric-title">توفير 80% من الوقت</span>
+                        <span class="metric-desc">إعداد وتنسيق وترقيم فوري دون عناء يدوي.</span>
+                    </div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-icon-wrap" style="background: rgba(99, 102, 241, 0.12); color: var(--editor-indigo);">📖</div>
+                    <div class="metric-text">
+                        <span class="metric-title">مصحف المدينة المنورة</span>
+                        <span class="metric-desc">رسم عثماني أصيل بخط حفص الذكي والرموز.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Features Section (الوظائف والقدرات المتقدمة بالتفصيل) -->
+            <section class="features-section">
+                <div class="section-head">
+                    <span class="section-badge">قدرات ذكية حصرية</span>
+                    <h2 class="section-title">بيئة متكاملة تريح المعلم في صياغة الاختبارات</h2>
+                    <p class="section-subtitle">
+                        كل ما يحتاجه المعلم والمعلمة والإدارة المدرسية من أدوات ذكية ومحررات متخصصة في منصة واحدة سهلة وسريعة.
+                    </p>
+                </div>
+
+                <div class="features-detailed-grid">
+
+                    <!-- Card 1 -->
+                    <div class="feature-detailed-card">
+                        <div class="card-top">
+                            <div class="card-icon" style="background: rgba(26, 86, 219, 0.1); color: var(--brand-blue);">📚</div>
+                            <h3 class="card-title">بنك الأسئلة والخلط الذكي</h3>
+                        </div>
+                        <p class="card-desc">
+                            قاعدة بيانات مدمجة لحفظ وإيداع الأسئلة وتصنيفها حسب المادة والصف والمستوى ونوع السؤال مع بحث وتصفية فورية.
+                        </p>
+                        <ul class="card-bullets">
+                            <li>خلط عشوائي لتوليد نماذج اختبار متعددة لمنع الغش</li>
+                            <li>حفظ عدد أسطر الإجابة لكل سؤال تلقائياً</li>
+                            <li>استيراد وإيداع الأسئلة بضغطة زر واحدة</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="feature-detailed-card">
+                        <div class="card-top">
+                            <div class="card-icon" style="background: rgba(13, 148, 136, 0.1); color: var(--editor-teal);">📖</div>
+                            <h3 class="card-title">القرآن الكريم بالرسم العثماني</h3>
+                        </div>
+                        <p class="card-desc">
+                            محرك قرآني متطور للبحث في السور والآيات الكريمة وإدراجها برسم مصحف المدينة النبوية الشريف (خط حفص الذكي).
+                        </p>
+                        <ul class="card-bullets">
+                            <li>حفاظ تام على الحركات والتشكيل دون أي تشويه</li>
+                            <li>تحديد نطاق الآيات وإدراجها مع أرقامها وعلامات الوقف</li>
+                            <li>وداعاً لمشاكل النسخ واللصق الخاطئ للآيات</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="feature-detailed-card">
+                        <div class="card-top">
+                            <div class="card-icon" style="background: rgba(99, 102, 241, 0.1); color: var(--editor-indigo);">📐</div>
+                            <h3 class="card-title">معادلات رياضية ومصفوفات</h3>
+                        </div>
+                        <p class="card-desc">
+                            محرر رياضي فائق الدقة لكتابة الكسور، الجذور، التكاملات، المصفوفات، والرموز الكيميائية والفيزيائية بكل سلاسة.
+                        </p>
+                        <ul class="card-bullets">
+                            <li>معادلات بصيغة كائنية متجهة لا تفقد وضوحها أبداً</li>
+                            <li>دعم كامل للغة العربية والرموز العلمية</li>
+                            <li>طباعة نقية دون تكسر للخطوط الرياضية</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="feature-detailed-card">
+                        <div class="card-top">
+                            <div class="card-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--brand-orange);">🔄</div>
+                            <h3 class="card-title">ترقيم تلقائي وحذف ذكي</h3>
+                        </div>
+                        <p class="card-desc">
+                            خاصية حصرية تعيد ترقيم الأسئلة والفقرات والخيارات تلقائياً وفورياً بمجرد حذف أي فقرة دون الحاجة لإعادة التعديل اليدوي.
+                        </p>
+                        <ul class="card-bullets">
+                            <li>حذف الفقرة وإعادة ترقيم تسلسل الاختبار في أجزاء من الثانية</li>
+                            <li>نقل الأسئلة لأعلى ولأسفل بسهولة تامة</li>
+                            <li>حماية تامة لتسلسل الأسئلة من أي خلل</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="feature-detailed-card">
+                        <div class="card-top">
+                            <div class="card-icon" style="background: rgba(236, 72, 153, 0.1); color: #DB2777);">⚡</div>
+                            <h3 class="card-title">قوالب أسئلة متعددة الأعمدة</h3>
+                        </div>
+                        <p class="card-desc">
+                            أنماط أسئلة احترافية مسبقة الإعداد للاختيار من متعدد، الصواب والخطأ، المزاوجة، إكمال الفراغ، والأسئلة المقالية.
+                        </p>
+                        <ul class="card-bullets">
+                            <li>توزيع خيارات الاختيار من متعدد على 1 أو 2 أو 3 أو 4 أعمدة</li>
+                            <li>تنقل سريع وفوري بين الخيارات بمفتاح Tab</li>
+                            <li>تنسيق موحد وجذاب يوفر مساحات الصفحة</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="feature-detailed-card">
+                        <div class="card-top">
+                            <div class="card-icon" style="background: rgba(14, 165, 233, 0.1); color: #0284C7);">🏛️</div>
+                            <h3 class="card-title">الترويسة المدرسية والدرجات</h3>
+                        </div>
+                        <p class="card-desc">
+                            ترويسة رسمية جاهزة وفق مواصفات وزارة التعليم بالمملكة، تشمل شعار الوزارة، الإدارة، المدرسة، والزمن، مع جدول رصد الدرجات.
+                        </p>
+                        <ul class="card-bullets">
+                            <li>تخصيص كامل لبيانات المدرسة والمادة والصف</li>
+                            <li>جدول توزيع ورصد الدرجات القياسي للاختبارات</li>
+                            <li>متوافقة تماماً مع معايير الاختبارات الرسمية</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="feature-detailed-card">
+                        <div class="card-top">
+                            <div class="card-icon" style="background: rgba(16, 185, 129, 0.1); color: #059669);">📜</div>
+                            <h3 class="card-title">رموز مجمع الملك فهد</h3>
+                        </div>
+                        <p class="card-desc">
+                            مكتبة مدمجة تشمل كافة الرموز والعبارات الإسلامية المعتمدة (ﷺ، ﷻ، ؓ، ﷰ، البسملة) بخطوط رسمية نقية بضغطة زر.
+                        </p>
+                        <ul class="card-bullets">
+                            <li>إدراج العبارات الشرعية الشائعة بلمسة واحدة</li>
+                            <li>تنسيق متناسق وفاخر مع خطوط المستند</li>
+                            <li>عدم الاعتماد على الصور المشوشة أو غير المتطابقة</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="feature-detailed-card">
+                        <div class="card-top">
+                            <div class="card-icon" style="background: rgba(168, 85, 247, 0.1); color: #7E22CE);">🖨️</div>
+                            <h3 class="card-title">معاينة وطباعة وتصدير PDF</h3>
+                        </div>
+                        <p class="card-desc">
+                            معاينة دقيقة تحاكي الورقة المطبوعة بنسبة 100% مع تحكم كامل بالهوامش والصفحات، وطباعة مباشرة وتصدير PDF فائق النقاء.
+                        </p>
+                        <ul class="card-bullets">
+                            <li>مخرجات متطابقة تماماً مع ما تراه على الشاشة</li>
+                            <li>تصدير ملفات PDF حادة وجاهزة لآلات التصوير المدرسي</li>
+                            <li>تقسيم وتوزيع الصفحات الذكي لمنع تداخل الأسئلة</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Comparison Section (مقارنة ذكية: محرر الاختبار مقابل Word التقليدي) -->
+            <section class="comparison-section">
+                <div class="section-head" style="margin-bottom: 15px;">
+                    <span class="section-badge" style="background: rgba(13, 148, 136, 0.1); color: var(--editor-teal); border-color: rgba(13, 148, 136, 0.2);">المقارنة الاحترافية</span>
+                    <h2 class="section-title">لماذا «محرر الاختبار» بدلاً من برامج الكتابة العادية؟</h2>
+                    <p class="section-subtitle">
+                        صُمم محرر الاختبار لمعالجة كل ما يسبب الإحباط وضياع الوقت في برامج التحرير العامة مثل Microsoft Word عند إعداد الاختبارات.
+                    </p>
+                </div>
+
+                <div class="comparison-table-wrap">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 25%;">وجه المقارنة</th>
+                                <th class="col-highlight" style="width: 40%;">✨ محرر الاختبار الذكي (Exam Editor)</th>
+                                <th style="width: 35%;">معالجات النصوص العامة (Word وغيره)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>ترقيم وحذف الفقرات</strong></td>
+                                <td class="col-highlight">
+                                    <span class="badge-pro">✓ آلي وفوري</span>
+                                    إعادة ترقيم تسلسل الأسئلة والخيارات آلياً بمجرد حذف أي فقرة.
+                                </td>
+                                <td>
+                                    <span class="badge-con">✗ يدوي وشاق</span>
+                                    يتطلب تعديل أرقام كافة الأسئلة والفقرات التالية يدوياً.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>الآيات القرآنية الشريفة</strong></td>
+                                <td class="col-highlight">
+                                    <span class="badge-pro">✓ برسم المصحف الشريف</span>
+                                    محرك مدمج بخط حفص الذكي مع ضبط التشكيل وعلامات الوقف دون أي تشويه.
+                                </td>
+                                <td>
+                                    <span class="badge-con">✗ تشوه في التشكيل</span>
+                                    نسخ ولصق خارجي غالباً ما يؤدي إلى تشتت التشكيل والكلمات.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>توزيع خيارات الاختيار من متعدد</strong></td>
+                                <td class="col-highlight">
+                                    <span class="badge-pro">✓ توزيع ذكي بالأعمدة</span>
+                                    اختيار (1، 2، 3، أو 4 أعمدة) متوازنة بنقرة زر مع دعم مفتاح Tab.
+                                </td>
+                                <td>
+                                    <span class="badge-con">✗ جداول معقدة تنفرط</span>
+                                    صعوبة ضبط المحاذاة والمسافات وانهيار التنسيق عند التعديل.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>بنك الأسئلة ونماذج الاختبار</strong></td>
+                                <td class="col-highlight">
+                                    <span class="badge-pro">✓ بنك متكامل + خلط نماذج</span>
+                                    قاعدة أسئلة قابلة للتصفية مع خلط الأسئلة لتوليد نماذج متعددة لمنع الغش.
+                                </td>
+                                <td>
+                                    <span class="badge-con">✗ غير موجود إطلاقاً</span>
+                                    يلزم إنشاء وتنسيق كل نموذج اختبار من الصفر يدوياً.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>الترويسة المدرسية والدرجات</strong></td>
+                                <td class="col-highlight">
+                                    <span class="badge-pro">✓ ترويسة رسمية جاهزة</span>
+                                    قالب معتمد مطابق لضوابط وزارة التعليم وجدول رصد الدرجات القياسي.
+                                </td>
+                                <td>
+                                    <span class="badge-con">✗ تصميم يدوي متعب</span>
+                                    بناء الجداول والهوامش يدوياً وضبطها عند كل مادة وصف.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>الخصوصية والاتصال بالإنترنت</strong></td>
+                                <td class="col-highlight">
+                                    <span class="badge-pro">✓ 100% بدون إنترنت</span>
+                                    حماية وسرية تامة لبنوك الأسئلة والاختبارات على جهازك الشخصي.
+                                </td>
+                                <td>
+                                    <span class="badge-con">متباينة</span>
+                                    بعض الحلول تتطلب اتصالاً سحابياً قد يعرض سرية الأسئلة للخطر.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Big Action CTA Banner -->
+            <div class="cta-banner-section">
+                <div class="cta-banner-content">
+                    <h2>جاهز لتحويل إعداد الاختبارات إلى تجربة سريعة ومتقنة؟</h2>
+                    <p>
+                        انضم إلى نخبة المعلمين والمعلمات والمدارس التي تضع الاحترافية وسرعة الإنجاز أولاً. احصل على نسختك من محرر الاختبار واستمتع بتجربة إعداد لا مثيل لها.
+                    </p>
+                </div>
+
+                <div class="cta-banner-buttons">
+                    <a href="https://github.com/hez124/ExamEditorEXE/releases/download/1.0.0/ExamEditor_Setup_v1.0.0.exe" class="btn btn-primary-cta" style="background: linear-gradient(135deg, var(--editor-teal) 0%, #0F766E 100%);">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        <span>تحميل البرنامج الآن</span>
+                    </a>
+                    <a href="https://term.zid.store" target="_blank" class="btn btn-store-cta" style="background: linear-gradient(135deg, #FF6B00 0%, #E05C00 100%);">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span>اطلب الآن من متجر تِرم</span>
+                    </a>
+
+                    <a href="https://wa.me/966554814644" target="_blank" class="btn btn-whatsapp-cta">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.59 2.002 14.153.997 11.959.997c-5.439 0-9.864 4.378-9.868 9.808-.001 1.774.475 3.506 1.378 5.037L2.483 20.83l5.164-1.354h.001z">
+                            </path>
+                        </svg>
+                        <span>تواصل واتساب مباشر</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer Bar -->
+    <footer class="compact-footer">
+        <div class="container footer-flex">
+            <p>© 2026 جميع الحقوق محفوظة لمنظومة <strong class="brand-link">تِرم term</strong> | محرر الاختبارات المدرسية الذكي</p>
+            <div class="footer-links">
+                <a href="https://term.zid.store" target="_blank">متجر تِرم (Zid)</a>
+                <span>|</span>
+                <a href="index.html">نظام جداول تِرم</a>
+                <span>|</span>
+                <a href="https://www.termscl.com" target="_blank">الموقع الرسمي: www.termscl.com</a>
+                <span>|</span>
+                <a href="https://wa.me/966554814644" target="_blank">واتساب: 0554814644</a>
+                <span>|</span>
+                <a href="https://www.youtube.com/@Term.info2026?app=desktop" target="_blank">قناة الشروحات (يوتيوب)</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal Image Viewer -->
+    <div id="previewModal" class="preview-modal" onclick="closePreviewModal()">
+        <div class="modal-dialog" onclick="event.stopPropagation()">
+            <button class="close-modal-btn" onclick="closePreviewModal()">&times;</button>
+            <img src="editor-showcase.jpg" alt="معاينة شاشة محرر الاختبارات المدرسية الذكي" class="modal-img">
+            <div class="modal-caption">
+                <h3>محرر الاختبار | Exam Editor - الإصدار المكتمل 2026</h3>
+                <p>صُمم لإعداد وصياغة الاختبارات المدرسية باحترافية وسرعة فائقة وفق المعايير الوزارية الرسمية بالمملكة.</p>
+                <div class="modal-details-grid">
+                    <div class="modal-detail-item">
+                        <strong>بنك الأسئلة والخلط</strong>
+                        <span>توليد نماذج اختبار متعددة لمنع الغش وتصفية شاملة.</span>
+                    </div>
+                    <div class="modal-detail-item">
+                        <strong>رسم المصحف العثماني</strong>
+                        <span>محرك قرآني معتمد بخط حفص الذكي والرموز الإسلامية.</span>
+                    </div>
+                    <div class="modal-detail-item">
+                        <strong>الترقيم التلقائي الفوري</strong>
+                        <span>حذف ذكي للفقرات مع إعادة ضبط الترقيم في أجزاء من الثانية.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactivity -->
+    <script>
+        function openPreviewModal() {
+            document.getElementById("previewModal").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+        function closePreviewModal() {
+            document.getElementById("previewModal").classList.remove("active");
+            document.body.style.overflow = "auto";
+        }
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closePreviewModal();
+        });
+    </script>
+</body>
+
+</html>
